@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intelligent Email Automation System</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <link rel="icon" href="/static/images/logo.png">
+</head>
+
+<body>
+
+    <!-- ========================= NAVBAR ========================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            🤖 Intelligent Email Automation
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#">Dashboard</a>
+
+            <a href="#">Documentation</a>
+
+            <a href="#">GitHub</a>
+
+        </div>
+
+    </nav>
+
+    <!-- ========================= MAIN ========================= -->
+
+    <div class="container">
+
+        <!-- ========================= HEADER ========================= -->
+
+        <header>
+
+            <h1>AI Email Automation Dashboard</h1>
+
+            <p>
+                Machine Learning • FastAPI • RAG • ChromaDB • Semantic Cache • LLM
+            </p>
+
+        </header>
+
+        <!-- ========================= EMAIL INPUT ========================= -->
+
+        <section class="card">
+
+            <h2>📧 Incoming Email</h2>
+
+            <textarea
+                id="email"
+                placeholder="Paste the email content here..."
+            ></textarea>
+
+            <div class="button-group">
+
+                <button id="processBtn" onclick="processEmail()">
+
+                    🚀 Process Email
+
+                </button>
+
+                <button onclick="clearForm()">
+
+                    🗑 Clear
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= LOADING ========================= -->
+
+        <div class="loading" id="loading">
+
+            <div class="spinner"></div>
+
+            <h3>Processing Email...</h3>
+
+        </div>
+
+        <!-- ========================= STATUS ========================= -->
+
+        <section class="grid">
+
+            <div class="card">
+
+                <h3>Spam Detection</h3>
+
+                <p id="classification">--</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Semantic Cache</h3>
+
+                <p id="cache">--</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Similarity Score</h3>
+
+                <p id="similarity">--</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>LLM Used</h3>
+
+                <p id="llm">--</p>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= RAG CONTEXT ========================= -->
+
+        <section class="card">
+
+            <h2>📚 Retrieved Knowledge (RAG)</h2>
+
+            <pre id="context">
+No Context Retrieved
+            </pre>
+
+        </section>
+
+        <!-- ========================= RESPONSE ========================= -->
+
+        <section class="card">
+
+            <h2>🤖 AI Generated Reply</h2>
+
+            <pre id="response">
+No Response Generated
+            </pre>
+
+        </section>
+
+        <!-- ========================= ACTIONS ========================= -->
+
+        <section class="card">
+
+            <div class="button-group">
+
+                <button onclick="copyResponse()">
+
+                    📋 Copy Reply
+
+                </button>
+
+                <button onclick="downloadResponse()">
+
+                    ⬇ Download Reply
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= WORKFLOW ========================= -->
+
+        <section class="card">
+
+            <h2>⚙ Email Processing Workflow</h2>
+
+<pre>
+
+Incoming Email
+       │
+       ▼
+Semantic Cache
+       │
+Hit / Miss
+       │
+       ▼
+Spam Detection (ML)
+       │
+Spam  → Delete
+       │
+Ham
+       ▼
+RAG Retrieval
+       │
+       ▼
+Primary LLM
+       │
+Failure
+       ▼
+Fallback LLM
+       │
+       ▼
+Generate Response
+       │
+       ▼
+Save Logs + Update Cache
+
+</pre>
+
+        </section>
+
+    </div>
+
+    <!-- ========================= FOOTER ========================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Intelligent Email Automation System
+
+        </p>
+
+        <p>
+
+            Built with FastAPI • Scikit-Learn • RAG • ChromaDB • Groq • Ollama
+
+        </p>
+
+    </footer>
+
+    <!-- ========================= JAVASCRIPT ========================= -->
+
+    <script src="/static/js/app.js"></script>
+
+</body>
+
+</html>
